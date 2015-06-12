@@ -1,13 +1,5 @@
-require 'httparty'
 require 'net/https'
 require 'uri'
-
-def make_request_httparty
-  url = 'https://api.github.com/users/octocat/orgs'
-  auth_header = 'Bearer 1234'
-  # HTTParty.get(url, headers: { 'Authorization' => auth_header })
-  HTTParty.get(url, headers: { :Authorization => auth_header })
-end
 
 def make_request_net_http
   uri = URI.parse 'https://api.github.com/users/octocat/orgs'
