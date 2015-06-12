@@ -11,7 +11,8 @@ class HeadersTest < MiniTest::Unit::TestCase
   def test_request
     stub_request(:get, "https://api.github.com/users/octocat/orgs")
       .with(:headers => {'Authorization'=>'Bearer 1234'})
-      .to_return(:status => 200, :body => "", :headers => {})
-    make_request
+      .to_return(:status => 200, :body => "Hello World", :headers => {})
+    response = make_request
+    assert_equal 'Hello World', response.body
   end
 end
