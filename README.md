@@ -1,5 +1,7 @@
 # Webmock Net::HTTP Headers as Symbols Bug
 
+See [WebMock Issue #486](https://github.com/bblimke/webmock/issues/486).
+
 When making a request and specifying headers as symbols, an exception is raised
 in `Net::HTTP`:
 
